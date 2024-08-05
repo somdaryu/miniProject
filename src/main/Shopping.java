@@ -17,7 +17,7 @@ public class Shopping {
 			Order.getCount();
 			FileWriter fw = new FileWriter("data.txt", true);
 			Scanner scanner = new Scanner(System.in);
-	
+			
 			System.out.println("1. 상품 주문하기");
 			System.out.println("2. 전체 주문 이력 보기");
 			System.out.println("3. 고객별 주문 이력 보기");
@@ -85,10 +85,12 @@ public class Shopping {
 				scanner.nextLine();
 				System.out.print("날짜: ");
 				String date = scanner.nextLine();
-				Search.searchName(date);
+				Search.searchDate(date);
+				
 			}else if(choice == 5) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
+				
 			}else {
 				System.out.println("1번부터 5번사이의 번호를 입력하세요.");
 			}
@@ -130,7 +132,9 @@ class Order{
 		}
 		count = lastCount;
 	}
-}
+	}
+
+	
 
 class Search {
 	public static void searchDate(String date) throws IOException {
